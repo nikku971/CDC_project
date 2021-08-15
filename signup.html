@@ -82,34 +82,28 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
     </form>
 </div>
 <script type="text/javascript">
-    function valid1()
-    {
-var d=document.getElementById("a1").value;
-var a=document.getElementById("a2").value;
-var x=document.getElementById("e1").value;
-var y = document.getElementById("e2").value;
-var r=new RegExp("^[a-zA-Z][_0-9a-zA-Z]+[@](vardhaman)[.](org)");
-var p = new RegExp("[6789][0-9]{9}","g");
-if(r.test(x))
-{
-if(p.test(y))
-{
-if(d==a){
-    document.write("sign in successfully completed");
-}
-else{
-window.alert("invalid password");
-}
- }
-else
-{
-window.alert("invalid phonenumber");
-}
-}
-else{
-window.alert("invalid E-mail address");    
-}
-}
+	function valid1() {
+		var d=document.getElementById("a1").value;
+		var a=document.getElementById("a2").value;
+		var x=document.getElementById("e1").value;
+		var y = document.getElementById("e2").value;
+		var r=new RegExp("^[a-zA-Z][_0-9a-zA-Z]+[@](vardhaman)[.](org)");
+		var p = new RegExp("[6789][0-9]{9}","g");
+		
+		if(r.test(x)) {
+			if(p.test(y)) {
+				if(d==a){
+					document.write("sign in successfully completed");
+				} else {
+					window.alert("invalid password");
+				}
+			} else {
+				window.alert("invalid phonenumber");
+			}
+		} else {
+			window.alert("invalid E-mail address");    
+		}
+	}
 </script>
 
 </body>
