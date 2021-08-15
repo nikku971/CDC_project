@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<e!DOCTYPE html>
 <html>
 <head>
 	<title>sign up</title>
@@ -69,7 +69,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 <body>
 <div class="login">
     <h1>Sign up</h1>
-   <form name="frmContact" id="frmContact"> <!-- method="post" action="connect.php" use JS for this so validation can stop the form before it's sent-->
+   <form name="frmContact" id="frmContact" method="post" action="connect.php"><!-- use JS for this so validation can stop the form before it's sent-->
         <input type="text" placeholder="Enter Email"  id="e1" required="required" name="email" />
         <input type="text"  placeholder="Enter Name"  id="n1" required="required" name="Name" />
         <input type="text"  placeholder="Enter Roll Number"  id="r1" required="required" name="RN" />
@@ -83,8 +83,8 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 </div>
 <script type="text/javascript">
 	function valid1(e) {
-		e.preventDefault();
-		const form = getElementById("frmContact");
+		//e.preventDefault();
+		const form = document.getElementById("frmContact");
 		var d=document.getElementById("a1").value;
 		var a=document.getElementById("a2").value;
 		var x=document.getElementById("e1").value;
@@ -99,12 +99,15 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 					form.Submit();
 					document.write("sign in successfully completed");
 				} else {
+					e.preventDefault();
 					window.alert("invalid password");
 				}
 			} else {
+				e.preventDefault();
 				window.alert("invalid phonenumber");
 			}
 		} else {
+			e.preventDefault();
 			window.alert("invalid E-mail address");    
 		}
 	}
